@@ -20,6 +20,7 @@ import { bgBlur, bgGradient, textGradient } from 'src/theme/css';
 
 import { varFade, MotionContainer } from 'src/components/animate';
 
+import { paths } from '../../routes/paths';
 import IconWrapper from '../../components/iconwrapper/iconwrapper';
 
 
@@ -240,7 +241,10 @@ export default function HomeHero() {
       <m.div variants={varFade().in}>
         <Stack spacing={1.5} direction={{ xs: 'column-reverse', sm: 'row' }} sx={{ mb: 5 }}>
           <Button
-            component={RouterLink}
+            component="a"
+            href="https://wa.me/51929733256"
+            target="_blank"
+            rel="noopener"
             color="inherit"
             size="large"
             variant="contained"
@@ -249,15 +253,13 @@ export default function HomeHero() {
             Contáctanos
           </Button>
 
-
-
           <Button
+            component={RouterLink}
+            href={paths.servicios}
             color="inherit"
             size="large"
             variant="outlined"
             startIcon={<IconWrapper icon="eva:external-link-fill" width={24} />}
-            target="_blank"
-            rel="noopener"
             sx={{ borderColor: 'text.primary' }}
           >
             Nuestros Servicios
@@ -279,19 +281,28 @@ export default function HomeHero() {
             mb: { xs: 5, md: 0 },
           }}
         >
-          {_socials.map((social) => (
-            <IconButton
-              key={social.name}
-              sx={{
-                '&:hover': {
-                  bgcolor: alpha(social.color, 0.08),
-                },
-              }}
-            >
-              <IconWrapper color={social.color} icon={social.icon} />
-            </IconButton>
-          ))}
-        </Stack>  
+          {_socials.map((social) => {
+            const isValidLink = social.path !== '';
+
+            return (
+              <IconButton
+                key={social.name}
+                component={isValidLink ? 'a' : 'button'}
+                href={isValidLink ? social.path : undefined}
+                target={isValidLink ? '_blank' : undefined}
+                rel={isValidLink ? 'noopener' : undefined}
+                sx={{
+                  '&:hover': {
+                    bgcolor: alpha(social.color, 0.08),
+                  },
+                }}
+              >
+                <IconWrapper color={social.color} icon={social.icon} />
+              </IconButton>
+            );
+          })}
+
+        </Stack>
       </Stack>
     </Stack>
   );

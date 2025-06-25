@@ -86,11 +86,20 @@ export default function Header() {
           {mdUp && <NavDesktop data={navConfig} />}
 
           <Stack alignItems="center" direction={{ xs: 'row', md: 'row-reverse' }}>
-            <Button variant="contained" target="_blank" rel="noopener" href={paths.minimalUI}>
+            <Button
+              component="a"
+              href="https://wa.me/51929733256"
+              target="_blank"
+              rel="noopener"
+              color="error"
+              size="medium"
+              variant="contained"
+            >
               Contáctanos
             </Button>
 
-            
+
+
 
             {!mdUp && <NavMobile data={navConfig} />}
           </Stack>
