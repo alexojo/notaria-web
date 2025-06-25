@@ -3,7 +3,7 @@ import { forwardRef } from 'react';
 
 import Box from '@mui/material/Box';
 import Link from '@mui/material/Link';
-import { useTheme } from '@mui/material/styles';
+// import { useTheme } from '@mui/material/styles';
 
 import { RouterLink } from 'src/routes/components';
 
@@ -11,15 +11,15 @@ import { RouterLink } from 'src/routes/components';
 
 const Logo = forwardRef(({ disabledLink = false, sx, ...props }, ref) => {
 
-    /* const logo = (
+    const logo = (
         <Box
             component="img"
-            src='/assets/logo.svg'
-            sx={{ width: 146, height: 48, cursor: 'pointer', ...sx }}
+            src='/assets/logo.png'
+            sx={{ width: 40, height: 40, cursor: 'pointer', ...sx }}
         />
-    ); */
+    );
 
-    const theme = useTheme();
+    /* const theme = useTheme();
 
     const SHAPE_MAIN = theme.palette.mode === 'light' ? theme.palette.primary.main : theme.palette.secondary.main;
     const SECONDARY_MAIN = theme.palette.secondary.main;
@@ -134,7 +134,7 @@ const Logo = forwardRef(({ disabledLink = false, sx, ...props }, ref) => {
 
             </svg>
         </Box>
-    );
+    ); */
 
     return (
         <Link component={RouterLink} href="/" sx={{ display: 'contents' }}>

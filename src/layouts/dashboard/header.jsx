@@ -10,9 +10,9 @@ import { bgBlur } from 'src/theme/css';
 
 import { useSettingsContext } from 'src/components/settings';
 
-import { NAV, HEADER } from '../config';
+import { NAV, HEADER } from '../config-layout';
+import { useResponsive } from '../../hooks/use-responsive';
 import IconWrapper from '../../components/iconwrapper/iconwrapper';
-import { useResponsiveMedia } from '../../hooks/use-responsive-media';
 import { RoleInfo, ThemeButton, ProfilePopover, NotificationsPopover } from '../../components/header';
 
 // ----------------------------------------------------------------------
@@ -23,7 +23,7 @@ export default function Header({ onOpenNav }) {
 
     const settings = useSettingsContext();
 
-    const isLargeScreen = useResponsiveMedia('up', 'lg');
+    const isLargeScreen = useResponsive('up', 'lg');
 
     const renderContent = (
         <>

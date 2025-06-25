@@ -10,11 +10,11 @@ import { usePathname } from 'src/routes/hooks';
 
 import Scrollbar from 'src/components/scrollbar';
 
-import { NAV } from '../config';
+import { NAV } from '../config-layout';
 import Sidebar from '../../components/sidebar';
 import { useNavData } from './config-navigation';
 import { LogoSidebar } from '../../components/logo';
-import { useResponsiveMedia } from '../../hooks/use-responsive-media';
+import { useResponsive } from '../../hooks/use-responsive';
 
 // ----------------------------------------------------------------------
 
@@ -22,7 +22,7 @@ export default function NavVertical({ openNav, onCloseNav }) {
 
     const theme = useTheme();
     const currentPath = usePathname();
-    const isLargeScreen = useResponsiveMedia('up', 'lg');
+    const isLargeScreen = useResponsive('up', 'lg');
 
     const sidebarData = useNavData();
 

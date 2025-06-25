@@ -2,15 +2,15 @@ import PropTypes from 'prop-types';
 
 import Box from '@mui/material/Box';
 
-import { NAV, HEADER } from '../config';
-import { useResponsiveMedia } from '../../hooks/use-responsive-media';
+import { NAV, HEADER } from '../config-layout';
+import { useResponsive } from '../../hooks/use-responsive';
 
 // ----------------------------------------------------------------------
 
 export default function Main({ children, sx, ...other }) {
 
 
-    const isLargeScreen = useResponsiveMedia('up', 'lg');
+    const isLargeScreen = useResponsive('up', 'lg');
     const paddingSpacing = 20;
 
     return (

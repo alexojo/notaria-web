@@ -3,9 +3,8 @@ import { motion } from 'framer-motion';
 import { IconButton } from '@mui/material';
 
 import { varHover } from '../animations';
-import CustomPopover from '../custom-popover';
-import usePopover from '../../hooks/use-popover';
 import IconWrapper from '../iconwrapper/iconwrapper';
+import CustomPopover, { usePopover } from '../custom-popover';
 
 
 // ----------------------------------------------------------------------

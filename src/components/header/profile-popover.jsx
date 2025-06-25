@@ -6,9 +6,9 @@ import { Box, Stack, Divider, MenuItem, IconButton, Typography } from '@mui/mate
 
 import { varHover } from '../animations';
 import { paths } from '../../routes/paths';
-import CustomPopover from '../custom-popover';
-import usePopover from '../../hooks/use-popover';
 import { useRouter } from '../../routes/hooks/use-router';
+import CustomPopover, { usePopover } from '../custom-popover';
+
 
 // ----------------------------------------------------------------------
 

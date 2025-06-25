@@ -1,0 +1,14 @@
+<svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g stroke="#007F5F" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Balanza base -->
+    <line x1="60" y1="30" x2="60" y2="90" />
+    <!-- Brazos -->
+    <line x1="35" y1="45" x2="85" y2="45" />
+    <!-- Cadenas -->
+    <line x1="35" y1="45" x2="30" y2="65" />
+    <line x1="85" y1="45" x2="90" y2="65" />
+    <!-- Platillos -->
+    <ellipse cx="30" cy="70" rx="10" ry="5" fill="#2BB673" />
+    <ellipse cx="90" cy="70" rx="10" ry="5" fill="#2BB673" />
+  </g>
+</svg>
