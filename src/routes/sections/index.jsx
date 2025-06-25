@@ -8,6 +8,7 @@ import MainLayout from "../../layouts/main";
 // ----------------------------------------------------------------------
 
 const PrincipalHomePage = lazy(() => import('src/pages/home'));
+const AboutUsPage = lazy(() => import('src/pages/about-us'));
 
 export function Router() {
 
@@ -39,7 +40,7 @@ export function Router() {
             element: (
                 <Suspense fallback={<div>Loading...</div>}>
                     <MainLayout>
-                        <h1>Nosotros</h1>
+                        <AboutUsPage />
                     </MainLayout>
                 </Suspense>
             )
