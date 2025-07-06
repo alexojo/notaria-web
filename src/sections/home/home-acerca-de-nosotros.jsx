@@ -8,8 +8,11 @@ import { alpha } from '@mui/material/styles';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 
+import { RouterLink } from 'src/routes/components';
+
 import { varFade, MotionViewport } from 'src/components/animate';
 
+import { paths } from '../../routes/paths';
 import IconWrapper from '../../components/iconwrapper/iconwrapper';
 
 // ----------------------------------------------------------------------
@@ -116,11 +119,13 @@ export default function HomeAcercaDeNosotros() {
 
             <m.div variants={varFade().inUp}>
                 <Button
+                    component={RouterLink}
+                    href={paths.nosotros}
                     color="inherit"
                     size="large"
                     variant="contained"
                 >
-                    Nuestros Servicios
+                    Acerca de Nosotros
                 </Button>
             </m.div>
         </Container>

@@ -10,7 +10,7 @@ import { varFade, MotionContainer } from 'src/components/animate';
 
 // ----------------------------------------------------------------------
 
-export default function ComponentHero() {
+export default function ComponentHero({ title, subtitle }) {
 
   return (
     <Box
@@ -34,22 +34,29 @@ export default function ComponentHero() {
         >
 
           <Stack spacing={2} display="inline-flex" direction="row" sx={{ color: 'common.white', mb: 3 }}>
-            <TextAnimate text="Nuestros" />
-            <TextAnimate text="Servicios" />
+            <TextAnimate text={title} />
           </Stack>
 
-          <m.div variants={varFade().inRight}>
-            <Typography
-              variant="body1 "
-              sx={{
-                mt: 3,
-                color: 'grey.400',
-                fontWeight: 'fontWeightSemiBold',
-              }}
-            >
-              Te acompañamos en cada trámite notarial con claridad, eficiencia y confianza.
-            </Typography>
-          </m.div>
+          {
+            subtitle
+
+            &&
+
+            <m.div variants={varFade().inRight}>
+              <Typography
+                variant="body1 "
+                sx={{
+                  mt: 3,
+                  color: 'grey.400',
+                  fontWeight: 'fontWeightSemiBold',
+                }}
+              >
+                {subtitle}
+              </Typography>
+            </m.div>
+
+          }
+
         </Box>
       </Container>
     </Box>
@@ -64,18 +71,24 @@ function TextAnimate({ text, variants, sx, ...other }) {
         typography: 'h3',
         overflow: 'hidden',
         display: 'inline-flex',
+        flexWrap: 'wrap',
         ...sx,
       }}
       {...other}
     >
       {text.split('').map((letter, index) => (
-        <m.span key={index} variants={variants || varFade().inUp}>
-          {letter}
+        <m.span
+          key={index}
+          variants={variants || varFade().inUp}
+          style={letter === ' ' ? { display: 'inline-block', width: '0.4em' } : undefined}
+        >
+          {letter === ' ' ? '\u00A0' : letter}
         </m.span>
       ))}
     </Box>
   );
 }
+
 
 TextAnimate.propTypes = {
   sx: PropTypes.object,

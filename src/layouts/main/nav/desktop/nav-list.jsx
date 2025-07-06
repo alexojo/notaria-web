@@ -68,16 +68,17 @@ export default function NavList({ data }) {
               onMouseLeave={handleCloseMenu}
               sx={{
                 ...paper({ theme }),
-                left: 0,
+                left: 500,
                 right: 0,
                 m: 'auto',
                 display: 'flex',
                 borderRadius: 2,
                 position: 'fixed',
                 zIndex: theme.zIndex.modal,
+                bgcolor: 'background.paper',
                 p: theme.spacing(5, 1, 1, 3),
                 top: HEADER.H_DESKTOP_OFFSET,
-                maxWidth: theme.breakpoints.values.lg,
+                maxWidth: 500,
                 boxShadow: theme.customShadows.dropdown,
               }}
             >

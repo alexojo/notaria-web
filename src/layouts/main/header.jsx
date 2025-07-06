@@ -91,9 +91,9 @@ export default function Header() {
               href="https://wa.me/51929733256"
               target="_blank"
               rel="noopener"
-              color="error"
               size="medium"
               variant="contained"
+              sx={{ml: 2}}
             >
               Contáctanos
             </Button>
