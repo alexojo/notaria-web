@@ -3,6 +3,7 @@ import { useRoutes } from "react-router-dom";
 
 import MainLayout from "../../layouts/main";
 import { serviciosRoutes } from "./servicios";
+import { SplashScreen } from "../../components/loading-screen";
 
 // ----------------------------------------------------------------------
 
@@ -18,7 +19,7 @@ export function Router() {
             path: '/',
             /* element: <Navigate to={CONFIG.auth.redirectPath} replace/> */
             element: (
-                <Suspense fallback={<div>Cargando...</div>}>
+                <Suspense fallback={ <SplashScreen /> }>
                     <MainLayout>
                         <PrincipalHomePage />
                     </MainLayout>
@@ -31,7 +32,7 @@ export function Router() {
         {
             path: '/nosotros',
             element: (
-                <Suspense fallback={<div>Cargando...</div>}>
+                <Suspense fallback={ <SplashScreen /> }>
                     <MainLayout>
                         <AboutUsPage />
                     </MainLayout>

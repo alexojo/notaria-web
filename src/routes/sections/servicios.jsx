@@ -2,6 +2,7 @@ import { lazy, Suspense } from "react";
 import { Outlet } from "react-router-dom";
 
 import MainLayout from "../../layouts/main";
+import { SplashScreen } from "../../components/loading-screen";
 
 const Testamentos = lazy(() => import('src/pages/servicios/protocolares/testamentos'));
 const ServicioEscriturasPublicas = lazy(() => import('src/pages/servicios/protocolares/escrituras-publicas'));
@@ -22,7 +23,7 @@ export const serviciosRoutes = [
     {
         path: '/servicios',
         element: (
-            <Suspense fallback={<div>Cargando...</div>}>
+            <Suspense fallback={<SplashScreen />}>
                 <MainLayout>
                     <Outlet />
                 </MainLayout>
