@@ -13,13 +13,7 @@ export const _socials = [
     color: '#E02D69',
     path: '',
   },
-  {
-    value: 'twitter',
-    name: 'Twitter',
-    icon: 'eva:twitter-fill',
-    color: '#00AAEC',
-    path: '',
-  },
+
 ];
 
 

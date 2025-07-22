@@ -35,7 +35,7 @@ export default function AboutHero() {
             },
           }}
         >
-          <TextAnimate text="¿Quienes" variants={varFade().inRight} sx={{ color: 'error.dark' }} />
+          <TextAnimate text="¿Quiénes" variants={varFade().inRight} sx={{ color: 'error.dark' }} />
 
           <br />
 

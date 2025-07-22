@@ -10,8 +10,6 @@ import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import { alpha, styled, useTheme } from '@mui/material/styles';
 
-import { RouterLink } from 'src/routes/components';
-
 import { useResponsive } from 'src/hooks/use-responsive';
 
 import { _socials } from 'src/_mock';
@@ -20,7 +18,6 @@ import { bgBlur, bgGradient, textGradient } from 'src/theme/css';
 
 import { varFade, MotionContainer } from 'src/components/animate';
 
-import { paths } from '../../routes/paths';
 import IconWrapper from '../../components/iconwrapper/iconwrapper';
 
 
@@ -251,18 +248,6 @@ export default function HomeHero() {
             startIcon={<IconWrapper icon="logos:whatsapp-icon" width={24} />}
           >
             Contáctanos
-          </Button>
-
-          <Button
-            component={RouterLink}
-            href={paths.servicios}
-            color="inherit"
-            size="large"
-            variant="outlined"
-            startIcon={<IconWrapper icon="eva:external-link-fill" width={24} />}
-            sx={{ borderColor: 'text.primary' }}
-          >
-            Nuestros Servicios
           </Button>
         </Stack>
       </m.div>

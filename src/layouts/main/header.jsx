@@ -6,9 +6,8 @@ import Button from '@mui/material/Button';
 import Toolbar from '@mui/material/Toolbar';
 import { useTheme } from '@mui/material/styles';
 import Container from '@mui/material/Container';
-import Badge, { badgeClasses } from '@mui/material/Badge';
 
-import { paths } from 'src/routes/paths';
+import { RouterLink } from 'src/routes/components';
 
 import { useOffSetTop } from 'src/hooks/use-off-set-top';
 import { useResponsive } from 'src/hooks/use-responsive';
@@ -57,29 +56,28 @@ export default function Header() {
         }}
       >
         <Container sx={{ height: 1, display: 'flex', alignItems: 'center' }}>
-          <Badge
-            sx={{
-              [`& .${badgeClasses.badge}`]: {
-                top: 8,
-                right: -16,
-              },
-            }}
-            badgeContent={
-              <Link
-                href={paths.changelog}
-                target="_blank"
-                rel="noopener"
-                underline="none"
-                sx={{ ml: 8 }}
-              >
-                <Label color="error" sx={{ textTransform: 'unset', height: 22, px: 0.5 }}>
-                  Venero Tapia
-                </Label>
-              </Link>
-            }
+
+          <Stack
+            direction="row"
+            justifyContent="flex-start"
+            alignItems="center"
+            spacing={1}
+            sx={{ height: 1, cursor: 'pointer' }}
+            component={RouterLink} href="/"
           >
+
             <Logo />
-          </Badge>
+
+            <Link
+              href="/"
+              rel="noopener"
+              underline="none"
+            >
+              <Label color="error" sx={{ textTransform: 'unset', height: 28, px: 1.5, fontSize: '1rem', cursor: 'pointer' }}>
+                Venero Tapia
+              </Label>
+            </Link>
+          </Stack>
 
           <Box sx={{ flexGrow: 1 }} />
 
@@ -93,7 +91,7 @@ export default function Header() {
               rel="noopener"
               size="medium"
               variant="contained"
-              sx={{ml: 2}}
+              sx={{ ml: 2 }}
             >
               Contáctanos
             </Button>
